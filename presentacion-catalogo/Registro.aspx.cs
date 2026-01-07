@@ -20,9 +20,9 @@ namespace presentacion_catalogo
         {
             try
             {
-                //Page.Validate();
-                //if (!Page.IsValid)
-                //    return;
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
 
                 if (Validacion.textoVacio(txtEmail) || Validacion.textoVacio(txtPassword))
                 {
@@ -31,12 +31,17 @@ namespace presentacion_catalogo
                 }
                 Usuario usuario = new Usuario();
                 UsuarioNegocio negocio = new UsuarioNegocio();
+                EmailService emailService = new EmailService();
 
                 usuario.Email = txtEmail.Text;
                 usuario.Pass = txtPassword.Text;
 
                 usuario.Id = negocio.insertarNuevo(usuario);
                 Session.Add("usuarioActivo", usuario);
+
+                //emailService.armarCorreo(usuario.Email, "Bienvenido", "Tu usuario ha sido generado exitosamente, bienvenido...");
+                //emailService.enviarEmail();
+
                 Response.Redirect("Default.aspx", false);
             }
             catch(System.Threading.ThreadAbortException ex) { }

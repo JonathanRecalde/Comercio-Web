@@ -15,15 +15,6 @@ namespace presentacion_catalogo
     {
 
         /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-
-        /// <summary>
         /// Control lblFiltro.
         /// </summary>
         /// <remarks>
@@ -51,15 +42,6 @@ namespace presentacion_catalogo
         protected global::System.Web.UI.WebControls.CheckBox chkAvanzado;
 
         /// <summary>
-        /// Control lblCampo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCampo;
-
-        /// <summary>
         /// Control ddlCampo.
         /// </summary>
         /// <remarks>
@@ -85,15 +67,6 @@ namespace presentacion_catalogo
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFiltroAvanzado;
-
-        /// <summary>
-        /// Control ddlEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
 
         /// <summary>
         /// Control btnBuscar.

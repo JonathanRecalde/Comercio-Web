@@ -273,13 +273,13 @@ namespace negocio
                 throw ex;
             }
         }
-        public List<Articulo> filtroAdmin(string campo, string criterio, string filtro, string estado)
+        public List<Articulo> filtroAdmin(string campo, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "Select A.Id, Codigo, Nombre, A.Descripcion, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria, Precio, A.IdMarca, A.IdCategoria, Activo From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id and ";
+                string consulta = "Select A.Id, Codigo, Nombre, A.Descripcion, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria, Precio, A.IdMarca, A.IdCategoria From ARTICULOS A, MARCAS M, CATEGORIAS C Where A.IdMarca = M.Id And A.IdCategoria = C.Id and ";
                 if (campo == "Marca")
                 {
                     switch (criterio)
@@ -322,10 +322,6 @@ namespace negocio
                             break;
                     }
                 }
-                if (estado == "Activo")
-                    consulta += "Activo = 1";
-                else if (estado == "Inactivo")
-                    consulta += "Activo = 0";
                 
                 datos.setearConsulta(consulta);
                 datos.ejecutarLectura();

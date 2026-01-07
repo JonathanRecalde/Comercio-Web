@@ -34,7 +34,6 @@
                                 <asp:ListItem Text="Categoria" />
                                 <asp:ListItem Text="Precio" />
                             </asp:DropDownList>
-                            <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Este campo es requerido" ControlToValidate="ddlCampo" runat="server" />
                         </div>
                     </div>
                     <div class="col-3">

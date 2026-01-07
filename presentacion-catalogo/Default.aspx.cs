@@ -74,6 +74,8 @@ namespace presentacion_catalogo
                 ddlCriterio.Items.Add("Termina con");
                 ddlCriterio.Items.Add("Contiene a");
             }
+            if (ddlCampo.SelectedItem.ToString() == "Seleccione una opción")
+                ddlCriterio.Items.Clear();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -83,6 +85,19 @@ namespace presentacion_catalogo
                 Page.Validate();
                 if (!Page.IsValid)
                     return;
+
+                if(ddlCampo.SelectedItem.ToString()=="Seleccione una opción")
+                {
+                    Session.Add("error","Debe seleccionar una opción en: Campo");
+                    Response.Redirect("Error.aspx");
+                }
+
+                if (Validacion.textoVacio(txtFiltro))
+                {
+                    Session.Add("error","El campo: Filtro es requerido");
+                    Response.Redirect("Error.aspx");
+                }
+
                 if (ddlCampo.SelectedItem.ToString() == "Precio")
                 {
                     if (!(Validacion.soloNros(txtFiltro.Text)))
@@ -107,8 +122,7 @@ namespace presentacion_catalogo
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
-            ddlCampo.Items.Clear();
-            ddlCampo.Items.Insert(0, new ListItem("Seleccione una opción"));
+            ddlCampo.SelectedIndex = 0;
 
             repRepetidor.DataSource = Session["listaArticulos"];
             repRepetidor.DataBind();
