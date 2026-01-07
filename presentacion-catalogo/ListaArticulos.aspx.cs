@@ -66,7 +66,7 @@ namespace presentacion_catalogo
 
         protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
         {
-            FiltroAvanzado = chkAvanzado.Checked;
+            txtFiltro.Enabled = !chkAvanzado.Checked;
         }
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)

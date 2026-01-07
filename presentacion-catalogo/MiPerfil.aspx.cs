@@ -25,7 +25,7 @@ namespace presentacion_catalogo
                         txtNombre.Text = usuario.Nombre;
                         txtApellido.Text = usuario.Apellido;
                         if (!string.IsNullOrEmpty(usuario.ImagenPerfil))
-                            imgNuevoPerfil.ImageUrl = "~/Images/" + usuario.ImagenPerfil;
+                            imgNuevoPerfil.ImageUrl = "~/Images/" + usuario.ImagenPerfil + "?v=" + DateTime.Now.Ticks.ToString();
                         else
                             imgNuevoPerfil.ImageUrl = "https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png";
                     }
@@ -59,6 +59,8 @@ namespace presentacion_catalogo
                 //Leer la imagen
                 Image img = (Image)Master.FindControl("imgAvatar");
                 img.ImageUrl = "~/Images/" + usuario.ImagenPerfil;
+                imgNuevoPerfil.ImageUrl = "~/Images/" + usuario.ImagenPerfil + "?v=" + DateTime.Now.Ticks.ToString();
+
                 Response.Redirect("Default.aspx", false);
             }
             catch (Exception ex)
