@@ -80,11 +80,9 @@ namespace presentacion_catalogo
         {
             try
             {
-                if (Validacion.textoVacio(txtFiltro))
-                {
-                    Session.Add("error", "Debe completar el campo filtro");
-                    Response.Redirect("Error.aspx");
-                }
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 if (ddlCampo.SelectedItem.ToString() == "Precio")
                 {
                     if (!(Validacion.soloNros(txtFiltro.Text)))

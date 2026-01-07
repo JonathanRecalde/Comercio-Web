@@ -172,11 +172,11 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\dominio\dominio.csproj">
+    <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{ef20c5a0-fd3d-4c25-b6e5-d320a5cdc408}</Project>
       <Name>dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\negocio\negocio.csproj">
+    <ProjectReference Include="..\negocio\negocio.csproj">
       <Project>{3c550464-70b9-4e3e-9592-62cbfdf951fd}</Project>
       <Name>negocio</Name>
     </ProjectReference>

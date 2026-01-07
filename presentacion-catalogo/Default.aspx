@@ -34,18 +34,21 @@
                                 <asp:ListItem Text="Categoria" />
                                 <asp:ListItem Text="Precio" />
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Este campo es requerido" ControlToValidate="ddlCampo" runat="server" />
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <label class="form-label">Criterio<span class="requerido"> *</span></label>
                             <asp:DropDownList runat="server" ID="ddlCriterio" CssClass="form-select" ></asp:DropDownList>
+                            <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Este campo es requerido" ControlToValidate="ddlCriterio" runat="server" />
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="mb-3">
                             <label class="form-label">Filtro<span class="requerido"> *</span></label>
                             <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" />
+                            <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Este campo es requerido" ControlToValidate="txtFiltro" runat="server" />
                         </div>
                     </div>
                 </div>
